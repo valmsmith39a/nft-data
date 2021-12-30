@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
@@ -13,7 +14,12 @@ public class HelloMetaverse {
 	public String greeting(String name) {
 		return String.format("Hello, %s", name); 
 	}
-
+	
+	@RequestMapping(value = "/")
+	public @ResponseBody String home() {
+		return "Hello Metaverse!";
+	}
+	
 	@RequestMapping(value = "/projects")
 	public String getProjects() {
 		return "[{ id: 1, project_name: Cheddar, project_metrics: { git_commits_total: 899, git_commits_daily_average: 12.5 }}, { id: 2, project_name: Provolone, project_metrics: { git_commits_total: 536, git_commits_daily_ave: 23}}]";
