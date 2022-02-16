@@ -1,1 +1,3 @@
-# spring-boot-gradle-example
+# nft-data
+
+Spring Boot application to aggregate NFT data.
