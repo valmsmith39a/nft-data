@@ -20,11 +20,11 @@ public class HelloMetaverse {
 		return "Hello Metaverse!";
 	}
 	
-	@RequestMapping(value = "/projects")
-	public String getProjects() {
-		return "[{ id: 1, project_name: Cheddar, project_metrics: { git_commits_total: 899, git_commits_daily_average: 12.5 }}, { id: 2, project_name: Provolone, project_metrics: { git_commits_total: 536, git_commits_daily_ave: 23}}]";
+	@RequestMapping(value = "/nfts")
+	public @ResponseBody String getNFTs() {
+		return "[{ id: 1, type: nft, project_name: GCheezyNFTs, profile: { number_of_nfts: 8, date_created: 02/19/2022 }}]";
 	}
-	
+
 	@PostMapping(value = "/projects")
 	public String createProject(@RequestBody String projectName) {
 		String response = String.format("{ id: 2, project_name: %s}", projectName);
